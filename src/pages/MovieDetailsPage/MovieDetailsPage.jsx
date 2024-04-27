@@ -1,5 +1,5 @@
 import css from './MovieDetailsPage.module.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { getMovieById } from '../../films-api';
 import { RiArrowGoBackFill } from 'react-icons/ri';
@@ -84,9 +84,9 @@ export default function MovieDetailsPage() {
           </Link>
         </li>
       </ul>
-      {/* <Suspense fallback={<b>Loading nested route...</b>}> */}
-      <Outlet />
-      {/* </Suspense> */}
+      <Suspense fallback={<b>Loading nested route...</b>}>
+        <Outlet />
+      </Suspense>
       {!movie && <p>Loading...</p>}
     </div>
   );
