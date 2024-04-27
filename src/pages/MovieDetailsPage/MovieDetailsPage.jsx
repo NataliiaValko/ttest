@@ -1,5 +1,5 @@
 import css from './MovieDetailsPage.module.css';
-import { useState, useEffect, useRef, Suspense } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
 import { getMovieById } from '../../films-api';
 import { RiArrowGoBackFill } from 'react-icons/ri';
@@ -74,7 +74,7 @@ export default function MovieDetailsPage() {
       )}
       <ul className={css.addition}>
         <li>
-          <Link to="cast">
+          <Link to="q">
             <RiMovie2Line /> Cast
           </Link>
         </li>
